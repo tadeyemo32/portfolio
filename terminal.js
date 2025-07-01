@@ -37,7 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const response = document.createElement("div");
         response.classList.add("output-line");
 
-        if (cmd === "make") {
+        if (
+          cmd === "make" ||
+          cmd === "make main" ||
+          cmd === "gcc main.c -o main" ||
+          cmd === "make main"
+        ) {
           response.textContent = "Compiling project... done.";
           hasRunMake = true;
         } else if (cmd === "./main") {

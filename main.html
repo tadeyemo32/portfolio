@@ -2,8 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ✅ Change the tab title to your name or brand -->
+    <title>Tolu Adeyemo | Portfolio</title>
+
+    <!-- ✅ Link to your CSS file — make sure this path is correct -->
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- ✅ This wraps the whole layout: sidebar + main content -->
+    <div class="container">
+      <!-- ===== Sidebar (left panel) ===== -->
+      <aside class="sidebar">
+        <!-- ✅ Profile section with your image and name -->
+        <div class="profile">
+          <!-- ✅ Change the image path to your own photo -->
+          <img src="assets/profile.jpg" alt="Tolu Adeyemo" />
+
+          <!-- ✅ Edit your displayed name -->
+          <h2>Tolu Adeyemo</h2>
+
+          <!-- ✅ Add your real social media links and icons -->
+          <div class="social-icons">
+            <a href="#"><img src="assets/images.png" alt="Facebook" /></a>
+            <a href="#"><img src="assets/github.svg" alt="GitHub" /></a>
+            <a href="#"
+              ><img src="assets/LinkedIn-Icon-Logo.wine.svg" alt="LinkedIn"
+            /></a>
+            <!-- 💡 You can add Twitter, Instagram, etc. here too -->
+          </div>
+        </div>
+
+        <!-- ✅ Sidebar navigation links -->
+        <nav>
+          <!-- ✅ Add actual links or use anchor IDs for sections -->
+          <a href="#" class="active">Home</a>
+          <a href="#">About</a>
+          <a href="#">Resume</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+      </aside>
+
+      <!-- ===== Main content (right panel) ===== -->
+      <main class="hero">
+        <!-- ✅ Hero section with name and short description -->
+        <div class="hero-text">
+          <!-- ✅ Change your name and job title here -->
+          <h1>Daniel Adeyemo</h1>
+          <p>I'm a Software Developer</p>
+          <!-- 💡 You can change this to “I'm a Web Developer”, “Blockchain Engineer”, etc. -->
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

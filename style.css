@@ -1,0 +1,99 @@
+/* ===== Reset and Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding doesn't affect layout */
+}
+
+body,
+html {
+  font-family: "Segoe UI", sans-serif; /* ✅ Change this font if you prefer another */
+  height: 100%;
+}
+
+/* ===== Main Layout Container ===== */
+.container {
+  display: flex;
+  height: 100vh; /* Full height of the screen */
+}
+
+/* ===== Sidebar Styles (left panel) ===== */
+.sidebar {
+  width: 250px; /* ✅ Change this for wider/narrower sidebar */
+  background-color: #0f1a2b; /* ✅ Change this to customize sidebar background */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* ===== Profile Image & Info ===== */
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* ✅ Circular profile image */
+  object-fit: cover;
+}
+
+.profile h2 {
+  margin: 10px 0;
+  font-size: 1.2rem; /* ✅ Adjust your name size here */
+}
+
+/* ===== Social Media Icons ===== */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  /* ✅ Replace images with actual social icons or use FontAwesome */
+}
+
+/* ===== Sidebar Navigation Links ===== */
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ccc; /* ✅ Inactive link color */
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a.active,
+nav a:hover {
+  color: #00ffcc; /* ✅ Highlight/active color */
+}
+
+/* ===== Main Hero Section (right panel) ===== */
+.hero {
+  flex: 1;
+  background: url("assets/background.jpg") center center / cover no-repeat;
+  /* ✅ Change this image path to your own background image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 2px black; /* ✅ Helps text stand out on images */
+}
+
+/* ===== Hero Text Styles ===== */
+.hero-text h1 {
+  font-size: 3rem; /* ✅ Name size */
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  /* ✅ This is your intro line: change text in main.html */
+}
