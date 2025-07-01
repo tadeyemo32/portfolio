@@ -1,99 +1,219 @@
-/* ===== Reset and Global Styles ===== */
-* {
+/* Reset & General */
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Ensures padding doesn't affect layout */
+  font-family: "Courier New", Courier, monospace;
+  background-color: #000;
+  color: #00ff00;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
-body,
-html {
-  font-family: "Segoe UI", sans-serif; /* ✅ Change this font if you prefer another */
-  height: 100%;
-}
-
-/* ===== Main Layout Container ===== */
 .container {
   display: flex;
-  height: 100vh; /* Full height of the screen */
 }
 
-/* ===== Sidebar Styles (left panel) ===== */
+/* Sidebar */
 .sidebar {
-  width: 250px; /* ✅ Change this for wider/narrower sidebar */
-  background-color: #0f1a2b; /* ✅ Change this to customize sidebar background */
+  width: 250px;
+  background-color: #0a1f44;
   color: white;
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
+  border-right: 1px solid #09244f;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
 }
 
-/* ===== Profile Image & Info ===== */
+.profile {
+  text-align: center;
+}
+
 .profile img {
   width: 100px;
   height: 100px;
-  border-radius: 50%; /* ✅ Circular profile image */
+  border-radius: 50%;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .profile h2 {
   margin: 10px 0;
-  font-size: 1.2rem; /* ✅ Adjust your name size here */
+  color: white;
 }
 
-/* ===== Social Media Icons ===== */
 .social-icons {
   display: flex;
+  justify-content: center;
   gap: 10px;
-  margin: 10px 0;
+  margin-bottom: 30px;
 }
 
 .social-icons img {
-  width: 20px;
-  height: 20px;
-  /* ✅ Replace images with actual social icons or use FontAwesome */
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
 }
 
-/* ===== Sidebar Navigation Links ===== */
-nav {
+.sidebar nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: #153e75;
+}
+
+/* Main Content & Section Styling */
+.main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 80px 60px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  padding: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #ccc; /* ✅ Inactive link color */
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-nav a.active,
-nav a:hover {
-  color: #00ffcc; /* ✅ Highlight/active color */
-}
-
-/* ===== Main Hero Section (right panel) ===== */
-.hero {
-  flex: 1;
-  background: url("assets/background.jpg") center center / cover no-repeat;
-  /* ✅ Change this image path to your own background image */
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-  text-shadow: 1px 1px 2px black; /* ✅ Helps text stand out on images */
+  transition: all 0.7s ease-in-out;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-/* ===== Hero Text Styles ===== */
-.hero-text h1 {
-  font-size: 3rem; /* ✅ Name size */
+.section.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.hero-text p {
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ff90;
+}
+
+.section p {
+  max-width: 700px;
   font-size: 1.2rem;
-  margin-top: 10px;
-  /* ✅ This is your intro line: change text in main.html */
+  line-height: 1.8;
+  color: #b5ffb5;
+}
+
+#about {
+  background-color: #061d3f;
+}
+#resume {
+  background-color: #04172e;
+}
+#portfolio {
+  background-color: #021223;
+}
+#services {
+  background-color: #04172e;
+}
+#contact {
+  background-color: #061d3f;
+}
+
+/* Terminal Styling */
+.terminal {
+  background-color: #000;
+  color: #00ff00;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  max-height: 80vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-bar {
+  background-color: #111;
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.red {
+  background: #ff5f56;
+}
+.yellow {
+  background: #ffbd2e;
+}
+green {
+  background: #27c93f;
+}
+
+.terminal-body {
+  padding: 1rem;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-y: auto;
+  max-height: 400px;
+  font-family: monospace;
+}
+
+#typed-output::after {
+  content: "|";
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.skills {
+  max-width: 700px;
+  margin-top: 20px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-name {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #00ff90;
+}
+
+.skill-bar {
+  background-color: #022240;
+  border-radius: 12px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #00ff90;
+  border-radius: 12px;
+  transition: width 2s ease-in-out;
 }
