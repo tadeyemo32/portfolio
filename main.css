@@ -40,3 +40,7 @@
 }
 
 /* Terminal stays as is */
+.custom-link {
+  color: black;
+  text-decoration: underline;
+}

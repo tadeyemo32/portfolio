@@ -153,13 +153,16 @@ body {
   height: 12px;
   border-radius: 50%;
 }
-.red {
+
+.dot.red {
   background: #ff5f56;
 }
-.yellow {
+
+.dot.yellow {
   background: #ffbd2e;
 }
-green {
+
+.dot.green {
   background: #27c93f;
 }
 
@@ -171,19 +174,40 @@ green {
   overflow-y: auto;
   max-height: 400px;
   font-family: monospace;
+  position: relative;
 }
 
+/* Only one blinking cursor on input */
 #typed-output::after {
-  content: "|";
-  animation: blink 1s step-start infinite;
+  content: none;
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
+/* Blinking caret on input */
+#terminal-input {
+  background: transparent;
+  border: none;
+  color: #0f0;
+  outline: none;
+  font-family: monospace;
+  flex-grow: 1;
+  font-size: 1rem;
+  caret-color: #0f0;
 }
 
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  color: #0f0;
+  margin-top: 0.5rem;
+}
+
+.terminal-input-line .prompt {
+  user-select: none;
+  margin-right: 5px;
+}
+
+/* Skill bars */
 .skills {
   max-width: 700px;
   margin-top: 20px;
@@ -217,3 +241,158 @@ green {
   border-radius: 12px;
   transition: width 2s ease-in-out;
 }
+.nav-help {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  max-height: 180px; /* Limits height for scrolling */
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 30px 20px 15px 20px; /* top padding increased for close button */
+  color: #00ff00;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px #00ff00;
+  z-index: 10000;
+  user-select: none;
+}
+
+.nav-help h4 {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ff00;
+  position: relative;
+}
+
+/* Close button will be added dynamically with inline styles in JS */
+
+.nav-help ul {
+  margin: 0;
+  padding-left: 15px;
+  list-style-type: none;
+}
+
+.nav-help ul li {
+  margin-bottom: 6px;
+}
+
+.nav-help code {
+  background: #002200;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #00ff00;
+}
+
+.sidebar-controls {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+#minimize-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+#minimize-button:hover {
+  color: #ffcc00;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-content.full {
+  margin-left: 0 !important;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #111;
+}
+
+/* Animação do Shapeshift Showdown */
+
+/* Sidebar toggle animation */
+/* Sidebar styles */
+
+.nav-help {
+  background: #0b0c10; /* darker background to fit terminal/dark theme */
+  color: #66ff66; /* greenish terminal text color */
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  max-height: 280px;
+  overflow-y: auto;
+  box-shadow: 0 0 12px #33ff33aa;
+  user-select: text; /* allow text selection */
+  z-index: 10000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-help.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nav-help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  user-select: none; /* prevent accidental text selection on header */
+}
+
+#toggle-nav-help {
+  background: none;
+  border: none;
+  color: #66ff66;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0 6px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+#toggle-nav-help:hover {
+  color: #aaffaa;
+}
+
+#nav-help-body {
+  max-height: 230px;
+  overflow-y: auto;
+  user-select: text; /* important for allowing user to select text */
+}
+
+#nav-help-body.hidden {
+  display: none;
+}
+
+

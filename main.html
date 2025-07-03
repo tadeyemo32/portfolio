@@ -3,147 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tolu Adeyemo | Portfolio</title>
+    <title>tadeyemo32 | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <aside class="sidebar">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
         <div class="profile">
           <img src="assets/IMG_2156.png" alt="Tolu Adeyemo" />
           <h2>Daniel Adeyemo</h2>
           <div class="social-icons">
-            <a href="#"><img src="assets/images.png" alt="Facebook" /></a>
-            <a href="#"><img src="assets/github.svg" alt="GitHub" /></a>
-            <a href="#"
-              ><img src="assets/LinkedIn-Icon-Logo.wine.svg" alt="LinkedIn"
-            /></a>
+            <a href="mailto:tadeyemo32@gmail.com" target="_blank">
+              <img src="assets/gmail.svg" alt="Gmail" />
+            </a>
+            <a href="https://github.com/tadeyemo32" target="_blank">
+              <img src="assets/github.svg" alt="GitHub" />
+            </a>
+            <a href="https://www.linkedin.com/in/tadeyemo32/" target="_blank">
+              <img src="assets/LinkedIn-Icon-Logo.wine.svg" alt="LinkedIn" />
+            </a>
           </div>
         </div>
         <nav>
-          <a href="#home" class="nav-link active">Home</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#resume" class="nav-link">Resume</a>
-          <a href="#portfolio" class="nav-link">Portfolio</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#home" class="nav-link"><span>Home</span></a>
+          <a href="#about" class="nav-link"><span>About</span></a>
+          <a href="#resume" class="nav-link"><span>Resume</span></a>
+          <a href="#portfolio" class="nav-link"><span>Portfolio</span></a>
+          <a href="#services" class="nav-link"><span>Services</span></a>
+          <a href="#contact" class="nav-link"><span>Contact</span></a>
         </nav>
       </aside>
 
-      <main class="main-content">
+      <!-- Main Content -->
+      <main class="main-content" id="main-content">
         <section id="home" class="section hero">
           <div class="terminal">
             <div class="terminal-bar">
               <span class="dot red"></span>
               <span class="dot yellow"></span>
               <span class="dot green"></span>
+              <button
+  id="toggle-sidebar"
+  style="
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #66ff66;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+  "
+  onmouseover="this.style.color='#aaffaa'"
+  onmouseout="this.style.color='#66ff66'"
+>
+  -
+</button>
+
             </div>
             <div class="terminal-body">
               <pre id="typed-output"></pre>
+              <div class="terminal-input-line" id="terminal-input-line" style="display: none;">
+                <span class="prompt">portfolio git:(main) ✗ </span>
+                <input id="terminal-input" autocomplete="off" spellcheck="false" />
+              </div>
             </div>
           </div>
         </section>
 
         <section id="about" class="section">
           <h2>About Me</h2>
-          <p>
-            I am a software developer passionate about C, Web, AI, and
-            performance systems. This is placeholder content.
-          </p>
-          <div class="skills">
-            <div class="skill">
-              <span class="skill-name">C</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="70%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">C++</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="65%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">Python</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="68%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">Swift</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="60%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">Java</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="63%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">JavaScript</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="67%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">HTML5</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="70%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">CSS3</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="65%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">PowerShell</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="55%"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">Windows Terminal</span>
-              <div class="skill-bar">
-                <div class="skill-fill" data-fill="60%"></div>
-              </div>
-            </div>
-          </div>
+          <p>I am a software developer passionate about C, Web, AI, and performance systems.</p>
         </section>
 
         <section id="resume" class="section">
           <h2>Resume</h2>
           <p>
-            Here you can find my education, experience, and achievements.
-            Downloadable PDF coming soon!
+            Find my experience here:
+            <a href="assets/resume.pdf" download class="custom-link">Download Resume (PDF)</a>
           </p>
         </section>
 
         <section id="portfolio" class="section">
           <h2>Portfolio</h2>
-          <p>
-            Projects will appear here dynamically. Cards, images, GitHub links,
-            and live demos included.
-          </p>
+          <p>Portfolio content here.</p>
         </section>
 
         <section id="services" class="section">
           <h2>Services</h2>
-          <p>
-            Web Development, Game Programming, Firmware Engineering, and Tech
-            Consulting. Placeholder for packages and pricing.
-          </p>
+          <p>Services content here.</p>
         </section>
 
         <section id="contact" class="section">
           <h2>Contact</h2>
-          <p>Reach me via email or social media links. Form coming soon.</p>
+          <p>Reach me via email or social media links.</p>
         </section>
       </main>
     </div>
+
+    <!-- Terminal Help -->
+   <div id="nav-help" class="nav-help">
+  <div class="nav-help-header">
+    <h4>Terminal Navigation Commands</h4>
+    <button id="toggle-nav-help" aria-label="Toggle nav help">-</button>
+  </div>
+  <div id="nav-help-body">
+    <ul>
+      <li><code>./home</code> — Go to Home section</li>
+      <li><code>./about</code> — Go to About section</li>
+      <li><code>./resume</code> — Go to Resume section</li>
+      <li><code>./portfolio</code> — Go to Portfolio section</li>
+      <li><code>./services</code> — Go to Services section</li>
+      <li><code>./contact</code> — Go to Contact section</li>
+      <li><code>cd &lt;section&gt;</code> — Navigate to section</li>
+      <li><code>help</code> — Show available commands</li>
+      <li><code>clear</code> — Clear the terminal</li>
+    </ul>
+  </div>
+</div>
+
+
+
     <script src="main.js"></script>
   </body>
 </html>
